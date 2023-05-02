@@ -66,14 +66,10 @@ WSGI_APPLICATION = 'CoreCRUD.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+db_from_env = dj_database_url.config(default='postgresql://postgres:postgres@localhost:5432/mysite',conn_max_age=600)
 
 DATABASES = {
-    'default': {
-        dj_database_url.config(
-            default='postgresql://postgres:postgres@localhost:5432/mysite',
-            conn_max_age=600
-        )
-    }
+    'default': db_from_env
 }
 
 
