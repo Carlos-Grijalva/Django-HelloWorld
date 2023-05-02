@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>PERSONAS</h1>
+    {% for i in personas %}
+    <div>
+        <a href="{% url 'detalles' i.id %}">{{i.nombre}}</a>
+    </div>
+    <hr>
+    {% endfor %}
+</body>
+</html>
